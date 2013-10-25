@@ -16,5 +16,5 @@ func MustNot(i interface{}) {
 }
 
 // convenience functions, if included with .
-func ø(i interface{})          { MustNot(i) }
+func Nø(i interface{})         { MustNot(i) }
 func IsNil(i interface{}) bool { return Is(i) }

@@ -36,7 +36,7 @@ import (
 func main() {
     var x interface{}
     fmt.Println("is nil ", IsNil(x))
-    ø(x) // panics
+    Nø(x) // panics
 }
 ```
 
