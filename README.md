@@ -23,6 +23,23 @@ func main() {
 }
 ```
 
+or
+
+```go
+package main
+
+import (
+    "fmt"
+    . "github.com/metakeule/nil"
+)
+
+func main() {
+    var x interface{}
+    fmt.Println("is nil ", IsNil(x))
+    ø(x) // panics
+}
+```
+
 Documentation
 -------------
 
