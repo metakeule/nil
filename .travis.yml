@@ -5,3 +5,5 @@ go:
   - 1.2rc2
   - tip
 script: cd depcore && go test
+install: 
+  - go get -v -d .
