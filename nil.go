@@ -5,10 +5,25 @@ import (
 	"reflect"
 )
 
+func IsNilable(obj interface {
+	Kind() reflect.Kind
+}) bool {
+	switch obj.Kind() {
+	case reflect.Chan, reflect.Func, reflect.Interface, reflect.Map, reflect.Ptr, reflect.Slice:
+		return true
+	default:
+		return false
+	}
+}
+
 // returns true, if the inner value of i is nil
 // otherwise false
 func Is(i interface{}) bool {
-	return i == nil || reflect.ValueOf(i).IsNil()
+	return i == nil || (IsNilable(reflect.ValueOf(i)) && reflect.ValueOf(i).IsNil())
+}
+
+func IsNilValue(v reflect.Value) bool {
+	return IsNilable(v) && v.IsNil()
 }
 
 // panics if the inner value of i is nil
