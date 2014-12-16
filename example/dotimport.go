@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	. "github.com/metakeule/nil"
+	. "gopkg.in/metakeule/nil.v1"
 )
 
 func main() {
